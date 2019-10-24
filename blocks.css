@@ -269,11 +269,13 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.2;
   color: inherit; }
 
 h1, .h1 {
-  font-size: 2.75rem; }
+  font-size: 2rem;
+
+}
 
 h2, .h2 {
   font-size: 2rem; }
@@ -291,7 +293,7 @@ h6, .h6 {
   font-size: 0.813rem; }
 
 .lead {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 300; }
 
 .display-1 {

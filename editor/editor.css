@@ -188,6 +188,11 @@ a.grey:hover {
    animation: slide-left 0.5s forwards;
 }
 
+.add-tab {
+	height: 100%;
+	overflow-y: auto;
+}
+
 @-webkit-keyframes slide-right {
     100% { right: 0; }
 }
