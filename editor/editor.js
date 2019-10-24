@@ -38,8 +38,29 @@ $('#system').append(`
 </div>
 
 
+<div id="edit-settings" class="edit-tab">
+
+	<label>Move</label>
+	<div class="box">
+	
+	<a class="button no-margin split" id="moveup"><i class="fa fa-arrow-up"></i> &nbsp;Up</a><a class="button no-margin split" id="movedown"><i class="fa fa-arrow-down"></i> &nbsp;Down</a>
+	
+	</div>
+	
+	
+	<label>Delete</label>
+	<div class="box">
+	
+	<a class="button red no-margin" id="delete"><i class="fa fa-trash"></i> &nbsp;Delete</a>
+
+</div>
+
+
+</div>
+
+
 <div class="pad">
-	<a class="button grey" id="done">Done</a>
+	<a class="button green" id="done">Done</a>
 </div>
 
 </div>
@@ -130,6 +151,42 @@ make_editable();
 	});
 	
 	
+	$('#delete').on('click', function(){
+		
+		$('.current-block').fadeOut(function(){
+			
+			$(this).remove();
+			
+		});
+		
+	});
+	
+	$('#movedown').on('click', function(){
+	
+		var e = $('.current-block');	
+		// move down:
+		e.next().insertBefore(e);
+		
+		$([document.documentElement, document.body]).animate({
+		        scrollTop: $(e).offset().top
+		    }, 500);
+	
+	});
+	
+	$('#moveup').on('click', function(){
+	
+		var e = $('.current-block');	
+	
+		e.prev().insertAfter(e);
+		
+		$([document.documentElement, document.body]).animate({
+			        scrollTop: $(e).offset().top
+			    }, 500);
+		
+	});
+	
+	
+	
 	
 	
 
@@ -212,6 +269,42 @@ function make_editable(){
 		
 	
 	});
+	
+	
+	$(tagname).each(function(){
+		
+		$(this).prepend('<img src="editor/img/cog.png" class="cog exclude" style="display: none;" />');
+		
+	});
+	
+	$(tagname).not('.exclude').mouseenter(function() {
+	    //$(this).css('border', '1px solid lightblue');
+		
+		$(this).children('.cog').show();
+		
+		
+	}).mouseleave(function() {
+	    //$(this).css('border', '1px solid transparent');
+		
+		$(this).children('.cog').hide();
+		
+	});
+	
+	
+	$('.cog').on('click', function(){
+	
+		$('.current-block').removeClass('current-block');
+		
+		$(this).closest(tagname).addClass('current-block');
+	
+		$('.edit-tab').hide();
+		
+		$('#edit-settings').show();
+		
+		$('#editor').fadeIn();
+	
+	});
+	
 	
 }	
 

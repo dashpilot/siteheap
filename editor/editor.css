@@ -116,15 +116,28 @@ a.button {
 }
 
 
-#editor a.green:hover {
+#editor a.green {
+	
 	color:  white !important;
 	background-color:  #27ae60;
+	border:  1px solid #009C41;
+}
+
+#editor a.green:hover {
+	background-color: #009C41;
 }
 
 a.grey:hover {
 	display:  block;
 	color:  white !important;
 	background-color:  #333;
+}
+
+#editor a.red:hover {
+	display:  block;
+	color:  white !important;
+	background-color:  #e74c3c;
+	border: 1px solid #c0392b;
 }
 
 #dock {
@@ -214,6 +227,54 @@ a.grey:hover {
 
 #modal-content{
 	padding:  20px;
+}
+
+.cog {
+	width:  50px;
+	position:  absolute;
+	top:  25px;
+	right:  25px;
+}
+
+label {
+	margin: 0;
+	text-transform:  uppercase;
+	font-size:  13px;
+	letter-spacing: 0.05em;
+}
+
+.box {
+	border:  1px solid #DDD;
+	padding:  10px;
+	border-radius:  4px;
+	margin-bottom:  10px;
+	background-color:  white;
+}
+
+.box .button {
+	margin-top:  0;
+}
+
+
+.box .split:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	
+}
+
+.box .split:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-left: 0;
+}
+
+.split {
+	width:  50%;
+	display: inline-block;
+}
+
+.split:hover {
+	background-color:  #EEE;
 }
 
 
