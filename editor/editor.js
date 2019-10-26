@@ -4,9 +4,9 @@
 $(document).ready(function(){
 
 
-$('body').append('<div id="system"></div>');
+$('body').append('<div class="system"></div>');
 
-$('#system').append(`
+$('.system').append(`
 
 <div class="editor slide-left" id="adder">
 	

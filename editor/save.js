@@ -16,17 +16,20 @@ $(document).ready(function(){
 		
 		$('#download').on('click', function(){
 		
-			var system = $('#system').html();
-			
-			$('#system').html('');
-			
 			let head = $('head').html();
 			let body = $('body').html();
+		
+			$('body').append('<div id="temp" style="display: none;">'+body+'</div>');
+		
+		
+			$('#temp .cog').remove();
+			$('#temp .system').remove();
+			
+			body = $('#temp').html();
 			
 			let data = "<!DOCTYPE html><html>"+head+"</head><body>"+body+"</body></html>";
 			
-			
-			$('#system').html(system);
+			$('#temp').remove();
 			
 			download(data, 'index.html', 'text/html');
 			
