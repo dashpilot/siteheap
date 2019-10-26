@@ -270,6 +270,7 @@ function make_editable(){
 	
 	});
 	
+	$('.cog').remove();
 	
 	$(blocks_tagname).each(function(){
 		
