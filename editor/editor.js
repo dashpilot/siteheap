@@ -31,9 +31,10 @@ $('#system').append(`
 	<img id="original-Img" class="exclude" />
 	<input id="upload-Image" type="file" onchange="loadImageFile();" style="display: none;" />
 	
-	
-	
 	<a class="button grey" onclick="$('#mode').text('replace');$('#upload-Image').click();">Replace image</a>
+	
+	
+	<div id="mode" class="d-none"></div>
 
 </div>
 
@@ -278,7 +279,7 @@ function make_editable(){
 		
 	});
 	
-	$(blocks_tagname).not('.exclude').mouseenter(function() {
+	$(blocks_tagname).mouseenter(function() {
 	    //$(this).css('border', '1px solid lightblue');
 		
 		$(this).children('.cog').show();
