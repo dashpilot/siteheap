@@ -8,6 +8,8 @@ $('body').append('<div class="system"></div>');
 
 $('.system').append(`
 
+${img_path}
+
 <div class="editor slide-left" id="adder">
 	
 	<div class="edit-header">Add Content <a onclick="$('#adder').fadeOut();" class="float-right"><i class="fa fa-times"></i></a></div>
