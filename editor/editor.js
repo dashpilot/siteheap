@@ -8,7 +8,7 @@ $('body').append('<div class="system"></div>');
 
 $('.system').append(`
 
-${img_path}
+
 
 <div class="editor slide-left" id="adder">
 	
@@ -81,7 +81,7 @@ ${img_path}
 </div>
 
 
-<div id="dock"><img src="${img_path}editor/img/add.png" id="btn-add" class="exclude grow" /><img src="${img_path}editor/img/save.png" id="btn-save" class="exclude grow" /></div>
+<div id="dock"><img src="${base_path}editor/img/add.png" id="btn-add" class="exclude grow" /><img src="${base_path}editor/img/save.png" id="btn-save" class="exclude grow" /></div>
 
 
 `);
@@ -119,7 +119,7 @@ make_editable();
 		
 		if(typeof id !== 'undefined'){
 		
-			$('#adder .add-tab').append(`<a class="card" data-id="${id}"><img src="${preview}" class="exclude"><div class="card-label">${name}</div></a>`);
+			$('#adder .add-tab').append(`<a class="card" data-id="${id}"><img src="${template_path}${preview}" class="exclude"><div class="card-label">${name}</div></a>`);
 		}
 	
 	});
@@ -277,7 +277,7 @@ function make_editable(){
 	
 	$(blocks_tagname).each(function(){
 		
-		$(this).prepend('<img src="editor/img/cog.png" class="cog exclude" style="display: none;" />');
+		$(this).prepend('<img src="${base_path}editor/img/cog.png" class="cog exclude" style="display: none;" />');
 		
 	});
 	
