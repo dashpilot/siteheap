@@ -277,7 +277,7 @@ function make_editable(){
 	
 	$(blocks_tagname).each(function(){
 		
-		$(this).prepend('<img src="${base_path}editor/img/cog.png" class="cog exclude" style="display: none;" />');
+		$(this).prepend(`<img src="${base_path}editor/img/cog.png" class="cog exclude" style="display: none;" />`);
 		
 	});
 	
