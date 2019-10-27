@@ -79,7 +79,7 @@ $('.system').append(`
 </div>
 
 
-<div id="dock"><img src="editor/img/add.png" id="btn-add" class="exclude grow" /><img src="editor/img/save.png" id="btn-save" class="exclude grow" /></div>
+<div id="dock"><img src="${img_path}editor/img/add.png" id="btn-add" class="exclude grow" /><img src="${img_path}editor/img/save.png" id="btn-save" class="exclude grow" /></div>
 
 
 `);
