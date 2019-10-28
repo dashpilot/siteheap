@@ -22,20 +22,7 @@ $(document).ready(function(){
 		
 		$('#download').on('click', function(){
 		
-			let head = $('head').html();
-			let body = $('body').html();
-		
-			$('body').append('<div id="temp" style="display: none;">'+body+'</div>');
-		
-		
-			$('#temp .cog').remove();
-			$('#temp .system').remove();
-			
-			body = $('#temp').html();
-			
-			let data = "<!DOCTYPE html><html>"+head+"</head><body>"+body+"</body></html>";
-			
-			$('#temp').remove();
+			let data = getCleanHtml();
 			
 			download(data, 'index.html', 'text/html');
 			
@@ -50,11 +37,11 @@ $(document).ready(function(){
 					
 					console.log('saving...');
 				
-					let main = $(blocks_container).html();
+					let data = getCleanHtml();
 				
 				
 					
-					$.post(save_path, {site: site, page: page, template: template, main: main}, function( data ) {
+					$.post(save_path, {site: site, page: page, html: data}, function( data ) {
 					 
 						
 						console.log(data);
@@ -80,6 +67,32 @@ $(document).ready(function(){
 
 });
 
+
+function getCleanHtml(){
+
+
+		let head = $('head').html();
+		let body = $('body').html();
+	
+		$('body').append('<div id="temp" style="display: none;">'+body+'</div>');
+	
+	
+		$('#temp .cog').remove();
+		$('#temp .system').remove();
+		
+		$('#temp template').remove();
+		$('#temp .app').remove();
+		
+		body = $('#temp').html();
+		
+		let data = "<!DOCTYPE html><html>"+head+"</head><body>"+body+"</body></html>";
+		
+		$('#temp').remove();
+		
+		return data;
+
+
+}
 
 
 function download(data, filename, type) {
