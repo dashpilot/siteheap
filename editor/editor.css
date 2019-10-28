@@ -123,7 +123,7 @@ a.button {
 	border:  1px solid #009C41;
 }
 
-#editor a.green:hover {
+#editor a.green:hover,  #modal-window a.green:hover {
 	background-color: #009C41;
 }
 
