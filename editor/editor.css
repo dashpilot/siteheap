@@ -116,7 +116,7 @@ a.button {
 }
 
 
-#editor a.green {
+#editor a.green, #modal-window a.green {
 	
 	color:  white !important;
 	background-color:  #27ae60;
