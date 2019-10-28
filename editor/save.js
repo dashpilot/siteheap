@@ -34,13 +34,10 @@ $(document).ready(function(){
 			$('#save').on('click', function(){
 				
 				
-					
-					console.log('saving...');
 				
 					let data = getCleanHtml();
 				
 				
-					
 					$.post(save_path, {site: site, page: page, html: data}, function( data ) {
 					 
 						
