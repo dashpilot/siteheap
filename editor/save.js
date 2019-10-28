@@ -5,13 +5,19 @@ $(document).ready(function(){
 	$('#btn-save').on('click', function(){
 	
 
-	
-		$('#modal-content').html(`
+		if (typeof save_path !== 'undefined') {
+			
+			$('#modal-content').html(`
+			<a class="button green" id="save">Save</a>
+			`);
+			
+		}else{
 		
-		<a class="button grey" id="download">Download</a>
+			$('#modal-content').html(`
+			<a class="button grey" id="download">Download</a>
+			`);
 		
-		
-		`);
+		}
 		
 		
 		$('#download').on('click', function(){
@@ -45,21 +51,14 @@ $(document).ready(function(){
 		$('#editor').fadeOut('fast', function(){
 		
 		
-			var system = $('#system').html();
-			$('#system').html('');
+			let main = $(blocks_container).html();
+		
+		
 			
-			var head = $('head').html();
-			var main = $('main').html();
-			var body = $('body').html().replace(main, ''); // the rest of the body
-			
-			
-			
-			$.post(save_url, {site: site, page: page, head: head, body: body, main: main}, function( data ) {
+			$.post(save_path, {site: site, page: page, template: template, main: main}, function( data ) {
 			 
 				
 				console.log(data);
-				
-				$('#system').html(system);
 				
 				
 			});
@@ -77,6 +76,7 @@ $(document).ready(function(){
 
 
 });
+
 
 
 function download(data, filename, type) {
