@@ -26,6 +26,9 @@ $(document).ready(function(){
 			
 			download(data, 'index.html', 'text/html');
 			
+			$('#modal-window').fadeOut();
+			
+			
 		
 		});
 		
@@ -42,6 +45,8 @@ $(document).ready(function(){
 					 
 						
 						console.log(data);
+						
+						$('#modal-window').fadeOut();
 						
 						
 					});
