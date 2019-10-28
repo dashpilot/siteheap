@@ -47,7 +47,8 @@ $(document).ready(function(){
 			$('#save').on('click', function(){
 				
 				
-				
+					
+					console.log('saving...');
 				
 					let main = $(blocks_container).html();
 				
