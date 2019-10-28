@@ -41,32 +41,34 @@ $(document).ready(function(){
 			
 		
 		});
-	
-	});
-
-
-	$('#save').on('click', function(){
 		
 		
-		$('#editor').fadeOut('fast', function(){
 		
-		
-			let main = $(blocks_container).html();
-		
-		
-			
-			$.post(save_path, {site: site, page: page, template: template, main: main}, function( data ) {
-			 
+			$('#save').on('click', function(){
 				
-				console.log(data);
+				
+				
+				
+					let main = $(blocks_container).html();
+				
+				
+					
+					$.post(save_path, {site: site, page: page, template: template, main: main}, function( data ) {
+					 
+						
+						console.log(data);
+						
+						
+					});
+					
+			
 				
 				
 			});
-			
-		});
 		
-		
+	
 	});
+
 	
 	
 
