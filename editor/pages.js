@@ -124,7 +124,7 @@ function updatePages(){
 		var title = $(this).attr('data-title');
 		var url = $(this).attr('data-url');
 	
-		$(pages_ul).append(`<li><a href="${url}">${title}</a></li>`);
+		$(pages_ul).append(`<li class="nav-item"><a href="${url}" class="nav-link">${title}</a></li>`);
 	
 	});
 
