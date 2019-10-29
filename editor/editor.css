@@ -306,6 +306,8 @@ label {
 	padding:  0;
 }
 
+/*
+
 .form-control {
   display: block;
   width: 100%;
@@ -357,3 +359,5 @@ fieldset[disabled] .form-control {
 textarea.form-control {
   height: auto;
 }
+
+*/

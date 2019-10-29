@@ -8,7 +8,20 @@ $('.system').append(`
 	<div class="modal-window">
 		<div class="edit-header">Pages<a onclick="$('#pages-modal').fadeOut();" class="float-right"><i class="fa fa-times"></i></a></div>
 		
-		<div class="mod-content"></div>
+		<div class="mod-content">
+		
+	
+		
+		<div class="input-group mb-3">
+		  <input type="text" class="form-control" placeholder="Page title" id="field-page-title">
+		  <div class="input-group-append">
+		    <button class="btn btn-outline-secondary" type="button" id="btn-add-page">Add</button>
+		  </div>
+		</div>
+		
+		<ul class="list-group" id="pages-list"></ul>
+		
+		</div>
 	
 	</div>
 
@@ -23,7 +36,7 @@ $('.system').append(`
 
 $('#dock').append(`<img src="${base_path}editor/img/pages.png" id="btn-pages" class="exclude grow" />`);
 
-$('#pages-modal .mod-content').append('<ul class="list-group" id="pages-list"></ul>');
+
 
 
 $(pages_ul+" li a").each(function(){
@@ -69,7 +82,37 @@ $('#btn-pages').on('click', function(){
 
 });
 
+
+$('#btn-add-page').on('click', function(){
+
+	let title = $('#field-page-title').val();
+	let url = slugify(title);
+	
+	$('#pages-list').append(`
+		<li class="list-group-item" data-url="${url}" data-title="${title}"><span>${title}</span><i class="fa fa-trash delete-it"></i></li>
+	`);
+	
+	updatePages();
+	
+	$('.delete-it').on('click', function(){
+	
+		$(this).parent().fadeOut(function(){
+			
+			$(this).remove();
+			
+			updatePages();
+			
+		});
+	
+	});
+
 });
+
+
+});
+
+
+
 
 
 function updatePages(){
@@ -85,6 +128,17 @@ function updatePages(){
 	
 	});
 
+}
+
+
+function slugify(text)
+{
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
 }
 
 
