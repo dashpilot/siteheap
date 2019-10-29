@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
 
+$('#dock').append(`<img src="${base_path}editor/img/save.png" id="btn-save" class="exclude grow" />`);
+
 $('.system').append(`
 <div id="save-modal" class="modal">
 
