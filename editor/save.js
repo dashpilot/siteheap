@@ -1,23 +1,46 @@
 $(document).ready(function(){
 
 
+$('.system').append(`
+<div id="save-modal" class="modal">
+
+	<div class="modal-window">
+		<div class="edit-header">Save<a onclick="$('#save-modal').fadeOut();" class="float-right"><i class="fa fa-times"></i></a></div>
+		
+		<div class="mod-content"></div>
+	
+	</div>
+
+</div>
+`);
+
+
+	if (typeof save_path !== 'undefined') {
+		
+		$('#save-modal .mod-content').html(`
+		<a class="button green" id="save">Save</a>
+		`);
+		
+	}else{
+	
+		$('#save-modal .mod-content').html(`
+		<a class="button grey" id="download">Download</a>
+		`);
+	
+	}
+
+
 
 	$('#btn-save').on('click', function(){
 	
 
-		if (typeof save_path !== 'undefined') {
-			
-			$('#modal-content').html(`
-			<a class="button green" id="save">Save</a>
-			`);
-			
-		}else{
 		
-			$('#modal-content').html(`
-			<a class="button grey" id="download">Download</a>
-			`);
+		$('#adder,#editor').fadeOut();
 		
-		}
+		
+		
+			$('#save-modal').fadeIn();
+		
 		
 		
 		$('#download').on('click', function(){
@@ -26,7 +49,7 @@ $(document).ready(function(){
 			
 			download(data, 'index.html', 'text/html');
 			
-			$('#modal-window').fadeOut();
+			$('#save-modal').fadeOut();
 			
 			
 		
@@ -46,7 +69,7 @@ $(document).ready(function(){
 						
 						console.log(data);
 						
-						$('#modal-window').fadeOut();
+						$('#save-modal').fadeOut();
 						
 						
 					});

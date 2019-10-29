@@ -60,6 +60,18 @@
 	 	
 	 }
 	 
+	 nav {
+	 	width:  100%;
+	 	padding:  10px 10px 15px 10px;
+	 	border-bottom:  1px solid #DDD;
+	 }
+	 
+	 .nav li{
+	 	display:  inline-block;
+	 	margin-right:  15px;
+	 }
+	
+	 
     </style>
 	
 	
@@ -67,6 +79,16 @@
 	
   </head>
 <body spellcheck="false">
+
+<nav>
+<div class="container">
+	<ul class="nav">
+	<li><a href="home">Home</a></li>
+	<li><a href="about">About</a></li>
+	<li><a href="contact">Contact</a></li>
+	</ul>
+</div>
+</nav>
 
 <div id="main">
 
@@ -211,6 +233,8 @@ save_url = "";
 
 base_path = "";
 template_path = "";
+
+pages_ul = ".nav";
 </script>
 
 <script class="app" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -218,6 +242,7 @@ template_path = "";
 <link class="app" rel="stylesheet" type="text/css" href="editor/editor.css">
 <script class="app" src="editor/editor.js"></script>
 <script class="app" src="editor/save.js"></script>
+<script class="app" src="editor/pages.js"></script>
 
 </body>
 </html>

@@ -209,7 +209,7 @@ a.grey:hover {
     100% { left: 0; }
 }
 
-#modal-window {
+.modal-window {
 	width: 600px;
 	height: 400px;
 	border:  1px solid #DDD;
@@ -220,7 +220,7 @@ a.grey:hover {
 	top:  25%;
 }
 
-#modal {
+.modal {
 	position: fixed;
 	left:  0;
 	top:  0;
@@ -230,7 +230,7 @@ a.grey:hover {
 	display:  none;
 }
 
-#modal-content{
+.mod-content{
 	padding:  20px;
 }
 

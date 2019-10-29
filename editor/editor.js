@@ -69,16 +69,7 @@ $('.system').append(`
 </div>
 
 
-<div id="modal">
 
-<div id="modal-window">
-	<div class="edit-header"><span id="modal-title"></span><a onclick="$('#modal').fadeOut();" class="float-right"><i class="fa fa-times"></i></a></div>
-	
-	<div id="modal-content"></div>
-
-</div>
-
-</div>
 
 
 <div id="dock"><img src="${base_path}editor/img/add.png" id="btn-add" class="exclude grow" /><img src="${base_path}editor/img/save.png" id="btn-save" class="exclude grow" /></div>
@@ -100,15 +91,7 @@ make_editable();
 	
 	});
 	
-	$('#btn-save').on('click', function(){
 	
-		$('#adder,#editor').fadeOut();
-	
-		$('#modal-title').text('Save');
-	
-		$('#modal').fadeIn();
-	
-	});
 	
 	
 	$('template').each(function(){
