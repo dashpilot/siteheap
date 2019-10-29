@@ -32,7 +32,7 @@ $(pages_ul+" li a").each(function(){
 	var url = $(this).attr('href');
 
 	$('#pages-list').append(`
-		<li class="list-group-item" data-url="${url}" data-title="${title}"><span>${title}</span></li>
+		<li class="list-group-item" data-url="${url}" data-title="${title}"><span>${title}</span><i class="fa fa-trash delete-it"></i></li>
 	`);
 
 });
@@ -42,19 +42,23 @@ $('#pages-list').sortable({
 	
 	update: function(event, ui) {
 	
-		$(pages_ul).html('');
-	
-		$('#pages-list li').each(function(){
-		
-			var title = $(this).attr('data-title');
-			var url = $(this).attr('data-url');
-		
-			$(pages_ul).append(`<li><a href="${url}">${title}</a></li>`);
-		
-		});
+		updatePages();
 	
 	}
 	
+});
+
+
+$('.delete-it').on('click', function(){
+
+	$(this).parent().fadeOut(function(){
+		
+		$(this).remove();
+		
+		updatePages();
+		
+	});
+
 });
 
 
@@ -66,6 +70,22 @@ $('#btn-pages').on('click', function(){
 });
 
 });
+
+
+function updatePages(){
+
+	$(pages_ul).html('');
+
+	$('#pages-list li').each(function(){
+	
+		var title = $(this).attr('data-title');
+		var url = $(this).attr('data-url');
+	
+		$(pages_ul).append(`<li><a href="${url}">${title}</a></li>`);
+	
+	});
+
+}
 
 
 /*! jQuery UI - v1.11.4 - 2015-12-21
