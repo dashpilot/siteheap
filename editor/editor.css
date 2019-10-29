@@ -211,7 +211,7 @@ a.grey:hover {
 
 .modal-window {
 	width: 600px;
-	height: 400px;
+	min-height: 400px;
 	border:  1px solid #DDD;
 	border-radius: 4px;
 	background-color: #F8F8F8;
