@@ -62,26 +62,15 @@ $('.system').append(`
 			$('#save').on('click', function(){
 				
 				
-				let data = "\n\n<div class='"+main_class.replace('.', '')+"'>"+$(blocks_container).html()+"</div>\n\n";
+				let data = $(blocks_container).html();
 				
 				var head = $('head').html();
 				
-				if (typeof header_class !== 'undefined') {
+				var myheader = $('.header').html();
+				var myfooter = $('.footer').html();
 				
-				var header1 = "<div class='"+header_class.replace('.', '')+"'>"+$('.header').html();+"</div>";
 				
-				}else{
-				var header1 = "";
-			
-				}
-				
-				if (typeof footer_class !== 'undefined') {
-				var footer = "<div class='"+footer_class.replace('.', '')+"'>"+$(footer_class).html()+"</div>\n\n</body>\n</html>";
-				}else{	
-				var footer = "";	
-				}
-				
-				$.post(save_path, {site: site, page: page, html: data, head: head, header: header1, footer: footer}, function( data ) {
+				$.post(save_path, {site: site, page: page, html: data, head: head, header: myheader, footer: myfooter}, function( data ) {
 				 
 					
 					console.log(data);
