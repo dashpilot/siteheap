@@ -62,8 +62,22 @@ $('.system').append(`
 			$('#save').on('click', function(){
 				
 				
-				let data = $(blocks_container).html();
-				let nav = $(nav_class).html();
+				let data = "<div class='"+main_class+"'>"+$(blocks_container).html()+"</div>";
+				
+				
+				
+				if (typeof header_class !== 'undefined') {
+				let head = $('head').html();
+				let header = "<!DOCTYPE html><html>"+head+"</head><body><div class='"+header_class+"'>"+$(header_class).html();+"</div>";
+				}else{
+				let header = "";
+				}
+				
+				if (typeof footer_class !== 'undefined') {
+				let footer = "<div class='"+footer_class+"'>"+$(footer_class).html()+"</div>";
+				}else{	
+				let footer = "";	
+				}
 				
 				$.post(save_path, {site: site, page: page, html: data, nav: nav}, function( data ) {
 				 
