@@ -67,20 +67,21 @@ $('.system').append(`
 				
 				
 				if (typeof header_class !== 'undefined') {
-				let head = $('head').html();
-				let header = "<!DOCTYPE html><html>"+head+"</head><body><div class='"+header_class+"'>"+$(header_class).html();+"</div>";
+				var head = $('head').html();
+				var header1 = "<!DOCTYPE html><html>"+head+"</head><body><div class='"+header_class+"'>"+$(header_class).html();+"</div>";
 				console.log('1');
 				}else{
+				var header1 = "";
 				console.log('2');
 				}
 				
 				if (typeof footer_class !== 'undefined') {
-				let footer = "<div class='"+footer_class+"'>"+$(footer_class).html()+"</div>";
+				var footer = "<div class='"+footer_class+"'>"+$(footer_class).html()+"</div>";
 				}else{	
-				let footer = "";	
+				var footer = "";	
 				}
 				
-				$.post(save_path, {site: site, page: page, html: data, header: header, footer: footer}, function( data ) {
+				$.post(save_path, {site: site, page: page, html: data, header: header1, footer: footer}, function( data ) {
 				 
 					
 					console.log(data);
