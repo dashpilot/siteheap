@@ -62,7 +62,20 @@ $('.system').append(`
 			$('#save').on('click', function(){
 				
 				
+				let data = $(blocks_container).html();
+				let nav = $(nav_class).html();
 				
+				$.post(save_path, {site: site, page: page, html: data, nav: nav}, function( data ) {
+				 
+					
+					console.log(data);
+					
+					$('#save-modal').fadeOut();
+					
+					
+				});
+				
+				/*
 					let data = getCleanHtml();
 					
 					if (typeof nav_class !== 'undefined') {
@@ -92,6 +105,8 @@ $('.system').append(`
 						
 						
 					});
+					
+					*/
 					
 			
 				
@@ -137,6 +152,7 @@ function getCleanHtml(){
 
 
 }
+
 
 
 
