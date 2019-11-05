@@ -8,6 +8,10 @@ h5,h6, h1,h2,h3,h4,p, img{
 	/* background-color:  lightblue; */
 }
 
+.editor {
+	z-index: 999;
+}
+
 #editor, #adder {
 	width: 400px;
 	position:  fixed;
