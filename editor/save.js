@@ -68,7 +68,7 @@ $('.system').append(`
 				
 				if (typeof header_class !== 'undefined') {
 				var head = $('head').html();
-				var header1 = "<!DOCTYPE html><html><head>\n\n"+head+"</head>\n<body>\n\n<div class='"+header_class.replace('.', '')+"'>"+$(header_class).html();+"</div>";
+				var header1 = "<!DOCTYPE html><html><head>"+head+" </head><body>\n\n<div class='"+header_class.replace('.', '')+"'>"+$(header_class).html();+"</div>";
 				console.log('1');
 				}else{
 				var header1 = "";
