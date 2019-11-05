@@ -186,7 +186,7 @@ function make_editable(){
 
 	$(editable).on('click', function(e){
 	
-		
+		e.stopPropagation();
 	
 		$('.edit-tab').hide();
 	
