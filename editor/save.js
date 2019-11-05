@@ -79,7 +79,7 @@ $('.system').append(`
 				let footer = "";	
 				}
 				
-				$.post(save_path, {site: site, page: page, html: data, nav: nav}, function( data ) {
+				$.post(save_path, {site: site, page: page, html: data, header: header, footer: footer}, function( data ) {
 				 
 					
 					console.log(data);
