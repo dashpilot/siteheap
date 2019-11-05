@@ -64,15 +64,15 @@ $('.system').append(`
 				
 				let data = "\n\n<div class='"+main_class.replace('.', '')+"'>"+$(blocks_container).html()+"</div>\n\n";
 				
-				
+				var head = $('head').html();
 				
 				if (typeof header_class !== 'undefined') {
-				var head = $('head').html();
-				var header1 = "<!DOCTYPE html><html><head>"+head+" </head><body>\n\n<div class='"+header_class.replace('.', '')+"'>"+$(header_class).html();+"</div>";
-				console.log('1');
+				
+				var header1 = "<div class='"+header_class.replace('.', '')+"'>"+$(header_class).html();+"</div>";
+				
 				}else{
 				var header1 = "";
-				console.log('2');
+			
 				}
 				
 				if (typeof footer_class !== 'undefined') {
@@ -81,7 +81,7 @@ $('.system').append(`
 				var footer = "";	
 				}
 				
-				$.post(save_path, {site: site, page: page, html: data, header: header1, footer: footer}, function( data ) {
+				$.post(save_path, {site: site, page: page, html: data, head: head, header: header1, footer: footer}, function( data ) {
 				 
 					
 					console.log(data);
