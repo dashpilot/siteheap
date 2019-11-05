@@ -39,7 +39,7 @@ $('#dock').append(`<img src="${base_path}editor/img/pages.png" id="btn-pages" cl
 
 
 
-$(pages_ul+" li a").each(function(){
+$(nav_class+" li a").each(function(){
 
 	var title = $(this).text();
 	var url = $(this).attr('href');
@@ -117,14 +117,14 @@ $('#btn-add-page').on('click', function(){
 
 function updatePages(){
 
-	$(pages_ul).html('');
+	$(nav_class).html('');
 
 	$('#pages-list li').each(function(){
 	
 		var title = $(this).attr('data-title');
 		var url = $(this).attr('data-url');
 	
-		$(pages_ul).append(`<li class="nav-item"><a href="${url}" class="nav-link">${title}</a></li>`);
+		$(nav_class).append(`<li class="nav-item"><a href="${url}" class="nav-link">${title}</a></li>`);
 	
 	});
 

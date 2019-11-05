@@ -64,9 +64,26 @@ $('.system').append(`
 				
 				
 					let data = getCleanHtml();
+					
+					if (typeof nav_class !== 'undefined') {
+					let nav = $(nav_class).html();
+					}else{
+					let nav = "";
+					}
+					
+					if (typeof header_class !== 'undefined') {
+					let header = $(header_class).html();
+					}else{
+					let header = "";
+					}
+					
+					if (typeof footer_class !== 'undefined') {
+					let footer = $(footer_class).html();
+					}else{	
+					let footer = "";	
+					}
 				
-				
-					$.post(save_path, {site: site, page: page, html: data}, function( data ) {
+					$.post(save_path, {site: site, page: page, html: data, nav: nav, header: header, footer: footer}, function( data ) {
 					 
 						
 						console.log(data);
@@ -80,8 +97,8 @@ $('.system').append(`
 				
 				
 			});
-		
-	
+			
+			
 	});
 
 	
@@ -120,6 +137,8 @@ function getCleanHtml(){
 
 
 }
+
+
 
 
 function download(data, filename, type) {
