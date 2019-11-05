@@ -186,7 +186,7 @@ function make_editable(){
 
 	$(editable).on('click', function(e){
 	
-		e.stopPropagation();
+	
 	
 		$('.edit-tab').hide();
 	
@@ -286,6 +286,13 @@ function make_editable(){
 		
 		$('#editor').fadeIn();
 	
+	});
+	
+	
+	
+	$('.disable').click(function(e) {
+	    e.preventDefault();
+	    
 	});
 	
 	
