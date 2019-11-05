@@ -68,7 +68,7 @@ $('.system').append(`
 				
 				if (typeof header_class !== 'undefined') {
 				var head = $('head').html();
-				var header1 = "<!DOCTYPE html><html>"+head+"</head><body><div class='"+header_class.replace('.', '')+"'>"+$(header_class).html();+"</div>";
+				var header1 = "<!DOCTYPE html><html><head>"+head+"</head><body><div class='"+header_class.replace('.', '')+"'>"+$(header_class).html();+"</div>";
 				console.log('1');
 				}else{
 				var header1 = "";
@@ -76,7 +76,7 @@ $('.system').append(`
 				}
 				
 				if (typeof footer_class !== 'undefined') {
-				var footer = "<div class='"+footer_class.replace('.', '')+"'>"+$(footer_class).html()+"</div>";
+				var footer = "<div class='"+footer_class.replace('.', '')+"'>"+$(footer_class).html()+"</div></body></html>";
 				}else{	
 				var footer = "";	
 				}
