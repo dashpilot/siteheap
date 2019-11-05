@@ -69,8 +69,9 @@ $('.system').append(`
 				if (typeof header_class !== 'undefined') {
 				let head = $('head').html();
 				let header = "<!DOCTYPE html><html>"+head+"</head><body><div class='"+header_class+"'>"+$(header_class).html();+"</div>";
+				console.log('1');
 				}else{
-				let header = "";
+				console.log('2');
 				}
 				
 				if (typeof footer_class !== 'undefined') {
